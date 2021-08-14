@@ -14,9 +14,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Application" />
       <Folder Include="Data" />
-      <Folder Include="Domain" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Exceptions\Exceptions.csproj" />
+      <ProjectReference Include="..\Extensions\Extensions.csproj" />
+      <ProjectReference Include="..\Models\Models.csproj" />
+      <ProjectReference Include="..\Resolver\Resolver.csproj" />
     </ItemGroup>
 
 </Project>
