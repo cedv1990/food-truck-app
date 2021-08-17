@@ -1,7 +1,7 @@
 namespace Tests.Domain
 {
-    using Entities;
-    using Entities.Enums;
+    using Models;
+    using Models.Enums;
     using NUnit.Framework;
     using Exceptions.Http;
 
@@ -19,9 +19,9 @@ namespace Tests.Domain
 
             Assert.AreEqual(FacilityType.Truck, truck.FacilityType);
 
-            var cart = new FoodTruck(FacilityType.Cart);
+            var cart = new FoodTruck(FacilityType.PushCart);
             
-            Assert.AreEqual(FacilityType.Cart, cart.FacilityType);
+            Assert.AreEqual(FacilityType.PushCart, cart.FacilityType);
 
             Assert.Throws<FoodTruckInvalidParametersException>(() => new FoodTruck((FacilityType)3), FoodTruck.INVALID_FACILITY_TYPE);
         }

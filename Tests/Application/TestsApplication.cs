@@ -1,7 +1,7 @@
 using System;
 using Data;
 using Infrastructure;
-using Interfaces.Application;
+using Abstractions.Application;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using Resolver;

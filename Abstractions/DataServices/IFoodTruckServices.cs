@@ -9,6 +9,6 @@ namespace Abstractions.DataServices
     {
         IEnumerable<Models.FoodTruck> GetFoodTruckListService();
         Task<IEnumerable<FoodTruckDTO>> GetFoodTruckListFromExternalService();
-        void SaveFoodTruckList(IEnumerable<Models.FoodTruck> list);
+        IEnumerable<Models.FoodTruck> SaveFoodTruckList(IEnumerable<Models.FoodTruck> list);
     }
 }

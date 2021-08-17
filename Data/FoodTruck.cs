@@ -17,6 +17,8 @@ namespace Data
 
         public IEnumerable<FoodTruck> GetFoodTruckListService()
         {
+            return FoodTrucks.Select(x => x).ToList();
+            
             return FoodTrucks.ToList();
         }
 
@@ -38,12 +40,13 @@ namespace Data
             return null;
         }
 
-        public void SaveFoodTruckList(IEnumerable<FoodTruck> list)
+        public IEnumerable<Models.FoodTruck> SaveFoodTruckList(IEnumerable<FoodTruck> list)
         {
             try
             {
                 FoodTrucks.AddRange(list);
                 SaveChanges();
+                return GetFoodTruckListService();
             }
             catch (Exception ex)
             {

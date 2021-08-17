@@ -29,9 +29,7 @@ namespace Application
             var externalListDTO = await _services.GetFoodTruckListFromExternalService();
             var externalList = _domain.LoadFromDTO(externalListDTO);
 
-            _services.SaveFoodTruckList(externalList);
-
-            return externalList;
+            return _services.SaveFoodTruckList(externalList);
         }
     }
 }

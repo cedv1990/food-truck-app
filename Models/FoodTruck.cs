@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Models
 {
     using Enums;
@@ -9,13 +11,15 @@ namespace Models
         public static readonly string INVALID_FACILITY_TYPE = "Invalid facility type";
         public static readonly string INVALID_NAME = "Name is required";
         
-        public FacilityType FacilityType { get; }
+        [Column("facility_type")]
+        public FacilityType FacilityType { get; private set; }
         
-        public string Name { get; }
+        [Column("name")]
+        public string Name { get; private set; }
 
-        public int Id { get; set; }
+        public int Id { get; private set; }
         
-        public FoodTruck() {}
+        private FoodTruck() {}
 
         public FoodTruck(FacilityType facilityType, string name = "")
         {
