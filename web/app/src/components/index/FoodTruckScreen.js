@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { appStartLoading } from '../../actions/app';
+import { appStartGeolocation, appStartLoading } from '../../actions/app';
+import GoogleMap from '../maps';
 
 export const FoodTruckScreen = (props) => {
-    const { foodTruckList } = useSelector(state => state.app);
+    const { foodTruckList, gelocation: { coords } } = useSelector(state => state.app);
 
     const dispatch = useDispatch();
 
@@ -12,9 +13,20 @@ export const FoodTruckScreen = (props) => {
         dispatch(appStartLoading());
     }, [dispatch]);
 
+    useEffect(() => {
+        dispatch(appStartGeolocation());
+    }, [dispatch]);
+
+    const { latitude, longitude } = coords;
+
     return (
         <div>
             {foodTruckList.length} puestos de comida cargados
+            {latitude && longitude && (
+                <GoogleMap
+                    center={{ longitude, latitude }}
+                />
+            )}
         </div>
     );
 };
