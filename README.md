@@ -12,12 +12,58 @@ After this, the information must be made available to be consulted at any time f
 
 Well, I separated the project into two subprojects:
 
-- API (Back-End: made with .Net Core 5).
+- API (Back-End: made with .Net Core 5, EF).
 - Web App (Front-End: made with ReactJS - Redux, and Node Express).
 
 ## API 💻
 
 This project was developed with **DDD** (Domain Driven Design), using **.Net Core 5 C#** and **Sqlite** database.
+
+### Architecture 👨🏻‍💼
+
+The project consists of 11 subprojects, which are:
+
+- **Abstractions**:
+This transversal project contains all the interfaces defined to manage the dependency injection in all projects.
+- **API**:
+This project receives all web requests. The endpoints are documented with SWAGGER.
+
+  The **ConfigureServices** method in **Startup.cs**, uses the **Resolver** project, injecting all the needed dependencies map to serviceCollection object, executing **services.AddFoodTruck();**
+  
+  The **FoodTruckController** only exposes one endpoint: GET `/foodtruck`
+  
+  In the project folder, the **data.db** file will be displayed, which corresponds to the SQLite database where the information obtained in the external API is stored.
+- **Application**:
+This project contains all the logical operations in the application, from the information query and data verification in the database to the external API query and subsequent storage in the database.
+
+  This project only calls services layer (which is **Data** project responsibility: http calls and db queries) and maybe the transformations layer (which are **Domain** project responsibility: format data, etc).
+  
+- **Data**:
+This project is responsible for making HTTP calls and database queries.
+
+- **Domain**:
+This project is responsible for making data transformations. For example, transforms the received data in an HTTP call to our own entity to be saved in the database.
+
+- **Exceptions**:
+This transversal project contains all the exceptions definitions of the app.
+
+- **Extensions**:
+This transversal project contains all the extensions, like the `IsInValid` method to validate **Enums** or `CleanSpaces` method to remove spaces into a string.
+
+- **Infraestructure**:
+This project implements the databases configurations. In this case, there are two options: SQLite or InMemory (for tests).
+
+- **Models**:
+This project contains:
+  - Enums
+  - Data transfer objects
+  - Entities
+
+- **Resolver**:
+This project injects all the needed dependencies map to serviceCollection object in the **API** project, executing **AddFoodTruck** method.
+
+- **Tests**:
+Guess what it is... 😅
 
 ### To run locally, execute 📟:
 
