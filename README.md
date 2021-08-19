@@ -163,12 +163,12 @@ If everything goes well, it should show:
 
 When the Web App is running, you can navigate to [http://localhost:3000](http://localhost:3000/).
 
-## Consideration
+## Considerations
 
 - *The google map may be displayed with "For development purposes only" signs.*
 - The <img src="https://image.flaticon.com/icons/png/512/1276/1276208.png" height="20" /> icon indicate "Food Truck" facility type.
 - The <img src="https://image.flaticon.com/icons/png/512/5043/5043154.png" height="20" /> icon indicate "Push Cart" facility type.
-- The <img src="https://image.flaticon.com/icons/png/512/2634/2634120.png" height="20" /> icon is displayed when the installation type has not been provided by the external API.
+- The <img src="https://image.flaticon.com/icons/png/512/2634/2634120.png" height="20" /> icon is displayed when the facility type has not been provided by the external API.
 
 ## Screenshots
 
