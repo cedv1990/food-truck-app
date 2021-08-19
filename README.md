@@ -34,7 +34,7 @@ This project receives all web requests. The endpoints are documented with SWAGGE
   
   In the project folder, the **data.db** file will be displayed, which corresponds to the SQLite database where the information obtained in the external API is stored.
 - **Application**:
-This project contains all the logical operations in the application, from the information query and data verification in the database to the external API query and subsequent storage in the database.
+This project contains all the sequential operations in the application, from the information query and data verification in the database to the external API query and subsequent storage in the database.
 
   This project only calls services layer (which is **Data** project responsibility: http calls and db queries) and maybe the transformations layer (which are **Domain** project responsibility: format data, etc).
   
