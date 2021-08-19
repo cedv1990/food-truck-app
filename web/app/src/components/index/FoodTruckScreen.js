@@ -6,8 +6,13 @@ import GoogleMap from '../maps';
 
 import './style.css';
 
+const sanFranciscoLocation = {
+    latitude: 37.7386361,
+    longitude: -122.4481364,
+};
+
 export const FoodTruckScreen = (props) => {
-    const { foodTruckList, gelocation: { coords }, error } = useSelector(state => state.app);
+    const { foodTruckList, gelocation: { coords, status: geoStatus }, error, geolocationError } = useSelector(state => state.app);
     const { loading } = useSelector(state => state.ui);
 
     const dispatch = useDispatch();
@@ -38,7 +43,15 @@ export const FoodTruckScreen = (props) => {
         );
     }
 
-    const { latitude, longitude } = coords;
+    if (!geolocationError && !geoStatus) {
+        return (
+            <div className="loading info">
+                Waiting geolocation authorization...
+            </div>
+        );
+    }
+
+    const { latitude, longitude } = geolocationError ? sanFranciscoLocation : coords;
 
     const formatDescription = (locationDescription, address, foodItems, latitude, longitude) => (
         <div>
@@ -65,9 +78,7 @@ export const FoodTruckScreen = (props) => {
     );
 
     const handleCenter = () => {
-        const latitude = 37.7386361;
-        const longitude = -122.4481364;
-        dispatch(centerGeolocation({ latitude, longitude }));
+        dispatch(centerGeolocation(sanFranciscoLocation));
     };
 
     return (
@@ -77,6 +88,9 @@ export const FoodTruckScreen = (props) => {
                 <br /><br />
                 <button type="button" onClick={handleCenter}>Center at San Francisco</button>
             </aside>
+            {geolocationError && (
+                <article>Geolocation not enabled</article>
+            )}
             {latitude && longitude && foodTruckList.length > 0 && (
                 <GoogleMap
                     center={{ longitude, latitude }}
