@@ -104,9 +104,9 @@ The project consists of 2 "subprojects", which are:
 - **api**:
 This layer is responsible to make all the API calls to the dotnet API. Was created to not expose the dotnet API URI in the browser.
 
-  This project runs on Node express server, at `3500` port.
+  This project runs on Node Express Server, at `3500` port.
   
-  In the **package.json** file of the **api** project, the proxy to this layer was configured to have execution transparent.
+  In the **package.json** file of the **app** project, the proxy to this layer was configured to have execution transparent.
 
 - **app**:
 This layer is responsible to show the web app made with ReactJS Redux.
@@ -165,7 +165,10 @@ When the Web App is running, you can navigate to [http://localhost:3000](http://
 
 ## Consideration
 
-*The google map may be displayed with "For development purposes only" signs.*
+- *The google map may be displayed with "For development purposes only" signs.*
+- The <img src="https://image.flaticon.com/icons/png/512/1276/1276208.png" height="20" /> icon indicate "Food Truck" facility type.
+- The <img src="https://image.flaticon.com/icons/png/512/5043/5043154.png" height="20" /> icon indicate "Push Cart" facility type.
+- The <img src = "icon https://image.flaticon.com/icons/png/512/2634/2634120.png" height = "20" /> is displayed when the installation type has not been provided in the external API.
 
 ## Screenshots
 
