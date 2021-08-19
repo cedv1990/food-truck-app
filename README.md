@@ -100,3 +100,18 @@ If everything goes well, it should show:
 ```
 
 When the Web App is running, you can navigate to [http://localhost:3000](http://localhost:3000/).
+
+## Consideration
+
+*The google map may be displayed with "For development purposes only" signs.*
+
+## Screenshots
+
+- Web App
+![image](https://user-images.githubusercontent.com/12788783/129991671-677afb2a-981a-432b-bfdd-128c8a72fe82.png)
+
+- API (Swagger)
+![image](https://user-images.githubusercontent.com/12788783/129991880-d1f3854b-bf8b-46e4-ab06-c1312c0b936d.png)
+
+- IDE
+![image](https://user-images.githubusercontent.com/12788783/129991858-a83c9fbd-b3ca-4287-8af3-6a085d858491.png)
