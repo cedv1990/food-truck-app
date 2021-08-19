@@ -17,7 +17,7 @@ Well, I separated the project into two subprojects:
 
 ## API 💻
 
-This project was developed with **DDD** (Domain Driven Design), using **.Net Core 5 C#** and **Sqlite** database.
+This project was developed with **DDD** (Domain Driven Design) architecture, using **.Net Core 5 C#** and **Sqlite** database.
 
 ### Architecture 👨🏻‍💼
 
