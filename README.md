@@ -97,6 +97,22 @@ This project was developed with **ReactJS** and **Redux**, with a little **Node 
 
 That server is used in order to handle the API calls to the backend (dotnet api) - something like a middle-end that manages external api calls -.
 
+### Architecture 👨🏻‍💼
+
+The project consists of 2 "subprojects", which are:
+
+- **api**:
+This layer is responsible to make all the API calls to the dotnet API. Was created to not expose the dotnet API URI in the browser.
+
+  This project runs on Node express server, at `3500` port.
+  
+  In the **package.json** file of the **api** project, the proxy to this layer was configured to have execution transparent.
+
+- **app**:
+This layer is responsible to show the web app made with ReactJS Redux.
+
+  This project makes HTTP calls to the api project to obtain all the data, without knows the dotnet API URI.
+
 ### To run locally, execute 📟:
 
 ```console
