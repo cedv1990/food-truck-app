@@ -35,6 +35,17 @@ export const appReducer = (state = initialState, action) => {
                     ...action.payload,
                 },
             };
+        case types.centerGeolocation:
+            return {
+                ...state,
+                gelocation: {
+                    ...state.gelocation,
+                    coords: {
+                        ...state.gelocation.coords,
+                        ...action.payload,
+                    },
+                },
+            }
         default:
             return state;
     }

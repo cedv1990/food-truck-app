@@ -1,0 +1,28 @@
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px 10px;
+    border-bottom-right-radius: 5px;
+    border: none;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(63, 152, 194, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loading span {
+    font-size: 1.5em;
+}

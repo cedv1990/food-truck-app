@@ -1,0 +1,84 @@
+.food-truck {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    min-width: 250px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    transition: all .2s ease-in;
+}
+
+.food-truck:not(:hover) {
+    min-width: 20px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+.food-truck:not(:hover) .content {
+    display: none;
+    opacity: 0;
+}
+
+.food-truck:hover {
+    z-index: 99999;
+}
+
+.food-truck:hover .content {
+    display: block;
+    opacity: 1;
+}
+
+.food-truck:hover .content h3 {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.food-truck img {
+    height: 20px;
+}
+
+.food-truck .tags-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.food-truck .tags-container .tag {
+    margin: 0px 5px 5px 0;
+    padding: 2px 5px;
+    border-radius: 6px;
+    font-size: .9em;
+    color: rgb(41, 41, 41);
+    text-transform: capitalize;
+}
+
+.food-truck .tags-container .tag:nth-child(6n+1) {
+    background-color: #4dd0e1;
+}
+
+.food-truck .tags-container .tag:nth-child(6n+2) {
+    background-color: #f06292;
+    color: white;
+}
+
+.food-truck .tags-container .tag:nth-child(6n+3) {
+    background-color: #ba68c8;
+    color: white;
+}
+
+.food-truck .tags-container .tag:nth-child(6n+4) {
+    background-color: #ff8a65;
+    color: white;
+}
+
+.food-truck .tags-container .tag:nth-child(6n+5) {
+    background-color: #fff176;
+}
+
+.food-truck .tags-container .tag:nth-child(6n) {
+    background-color: #90a4ae;
+    color: white;
+}
