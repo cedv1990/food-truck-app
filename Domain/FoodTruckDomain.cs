@@ -16,7 +16,12 @@ namespace Domain
             return data
                 .Select(foodTruck => new FoodTruck(
                     facilityType: (FacilityType)Enum.Parse(typeof(FacilityType), foodTruck.facilitytype.CleanSpaces()),
-                    name: foodTruck.applicant
+                    name: foodTruck.applicant,
+                    locationDescription: foodTruck.locationdescription,
+                    address: foodTruck.address,
+                    foodItems: foodTruck.fooditems,
+                    latitude: Convert.ToDouble(foodTruck.latitude),
+                    longitude: Convert.ToDouble(foodTruck.longitude)
                 ));
         }
     }

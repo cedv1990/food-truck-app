@@ -15,11 +15,11 @@ namespace Tests.Domain
         [Test]
         public void ShouldOnCreateANewFoodTruckValidateFacilityType()
         {
-            var truck = new FoodTruck(FacilityType.Truck);
+            var truck = new FoodTruck(FacilityType.Truck, "test", "test");
 
             Assert.AreEqual(FacilityType.Truck, truck.FacilityType);
 
-            var cart = new FoodTruck(FacilityType.PushCart);
+            var cart = new FoodTruck(FacilityType.PushCart, "test", "test");
             
             Assert.AreEqual(FacilityType.PushCart, cart.FacilityType);
 
@@ -30,7 +30,7 @@ namespace Tests.Domain
         public void ShouldOnCreateANewFoodTruckValidateNotEmptyName()
         {
             var name = "Test Truck Inc.";
-            var truck = new FoodTruck(FacilityType.Truck, name);
+            var truck = new FoodTruck(FacilityType.Truck, name, "test");
             
             Assert.AreEqual(name, truck.Name);
 
