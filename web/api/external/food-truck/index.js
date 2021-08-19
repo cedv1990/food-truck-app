@@ -8,7 +8,6 @@ class ApiFoodTruck extends ApiBase {
     async getList() {
         try {
             const data = await this.get(this.apiUrlBase);
-            console.log(data);
             return data;
         } catch (e) {
             return this.reject(e);

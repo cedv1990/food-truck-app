@@ -7,7 +7,7 @@ import GoogleMap from '../maps';
 import './style.css';
 
 export const FoodTruckScreen = (props) => {
-    const { foodTruckList, gelocation: { coords } } = useSelector(state => state.app);
+    const { foodTruckList, gelocation: { coords }, error } = useSelector(state => state.app);
     const { loading } = useSelector(state => state.ui);
 
     const dispatch = useDispatch();
@@ -23,7 +23,17 @@ export const FoodTruckScreen = (props) => {
     if (loading) {
         return (
             <div className="loading">
-                Loading food trucks locations, please wait... meanwhile, drink a coffee <span>☕️</span>
+                Loading food trucks locations, please wait... meanwhile, drink a coffee <span>☕</span>
+            </div>
+        );
+    }
+
+    if (error) {
+        const url = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/swagger/index.html' : '';
+        return (
+            <div className="loading error">
+                An error occurred while querying the food trucks... are you sure the dotnet API is running? <span>💔</span><br />
+                <p>Check out <a href={url} target="_blank" rel="noreferrer">this page</a></p>
             </div>
         );
     }

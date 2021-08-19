@@ -5,6 +5,7 @@ using Abstractions.Application;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using Resolver;
+using Abstractions.Infrastructure;
 
 namespace Tests.Application
 {

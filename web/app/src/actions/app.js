@@ -15,6 +15,7 @@ export const appStartLoading = () => async (dispatch) => {
         setTimeout(() => dispatch(uiLoadingEnd()), 1000);
     } catch (error) {
         console.log(`Error trying to getFoodTruckSites: ${error}`);
+        dispatch(uiLoadingEnd());
         dispatch(errorLoadingData());
     }
 };

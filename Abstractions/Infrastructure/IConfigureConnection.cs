@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure
+namespace Abstractions.Infrastructure
 {
     public interface IConfigureConnection
     {

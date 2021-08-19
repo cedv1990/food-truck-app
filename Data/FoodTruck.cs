@@ -17,8 +17,6 @@ namespace Data
 
         public IEnumerable<FoodTruck> GetFoodTruckListService()
         {
-            return FoodTrucks.Select(x => x).ToList();
-            
             return FoodTrucks.ToList();
         }
 

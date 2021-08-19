@@ -23,6 +23,11 @@ aside {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.loading.error {
+    flex-flow: column;
+    background-color: rgba(194, 63, 63, 0.5);
+}
+
 .loading span {
     font-size: 1.5em;
 }

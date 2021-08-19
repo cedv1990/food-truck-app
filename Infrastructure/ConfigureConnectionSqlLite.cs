@@ -1,3 +1,4 @@
+using Abstractions.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure
